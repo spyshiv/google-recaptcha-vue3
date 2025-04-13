@@ -1,21 +1,47 @@
 {
   "name": "google-recaptcha-vue3",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "description": "Vue 3 component which support both Google reCAPTCHA v2 and v3",
+  "main": "google-recaptcha-vue3.umd.js",
+  "module": "google-recaptcha-vue3.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./google-recaptcha-vue3.es.js",
+      "require": "./google-recaptcha-vue3.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "build": "vite build"
   },
-  "dependencies": {
-    "vue": "^3.5.13"
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/tsconfig": "^0.7.0",
-    "typescript": "~5.7.2",
-    "vite": "^6.2.0",
-    "vue-tsc": "^2.2.4"
-  }
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "vue",
+    "recaptcha",
+    "google",
+    "v2",
+    "v3",
+    "vue3",
+    "vite"
+  ],
+  "author": "Shiv Baran Singh <spyshiv@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spyshiv/google-recaptcha-vue3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spyshiv/google-recaptcha-vue3/issues"
+  },
+  "homepage": "https://github.com/spyshiv/google-recaptcha-vue3#readme"
 }
