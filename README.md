@@ -11,7 +11,7 @@ With this simple and efficient plugin, you can effortlessly integrate **Google r
 Install the plugin via npm:
 
 ```bash
-npm install google-recaptcha-v3
+npm install google-recaptcha-vue3
 ```
 
 ---
@@ -32,16 +32,14 @@ npm install google-recaptcha-v3
 1.  **Import the component:**
 
     ```JavaScript
-    import GoogleRecaptchaVue3 from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-v3';
     ```
 
 2.  **Integrate into your component template:**
 
-    Code snippet
-
     ```JavaScript
     <template>
-      <GoogleRecaptchaVue3
+      <GoogleRecaptcha
         ref="recaptchaRef"
         siteKey="your-site-key"
         action="submit"
@@ -52,7 +50,7 @@ npm install google-recaptcha-v3
 
     <script setup>
     import { ref } from 'vue';
-    import GoogleRecaptchaVue3 from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-v3';
 
     const recaptchaRef = ref(null);
 
@@ -105,14 +103,14 @@ npm install google-recaptcha-v3
 1.  **Import the component:**
 
     ```JavaScript
-    import GoogleRecaptchaVue3 from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-v3';
     ```
 
 2.  **Use it in your component template:**
 
     ```JavaScript
     <template>
-      <GoogleRecaptchaVue3
+      <GoogleRecaptcha
         siteKey="your-site-key"
         version="v2"
         autoLoad="true"
@@ -123,7 +121,7 @@ npm install google-recaptcha-v3
 
     <script setup>
     import { ref } from 'vue';
-    import GoogleRecaptchaVue3 from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-v3';
 
     const handleToken = (token) => {
       console.log('Token:', token);
@@ -169,8 +167,6 @@ npm install google-recaptcha-v3
 | `siteKey`  | both    | String  | ✅ Yes   | Your Google reCAPTCHA site key.                                        |
 | `action`   | v3      | String  | No       | A contextual action name for v3 scoring.                               |
 | `autoLoad` | v2      | Boolean | No       | Automatically load the reCAPTCHA on component mount (default: `true`). |
-
-Export to Sheets
 
 ### 📢 Events
 

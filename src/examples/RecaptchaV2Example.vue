@@ -13,7 +13,7 @@
       placeholder="Enter your site key"
     />
     <div :key="refreshKey">
-      <GoogleRecaptchaVue3
+      <GoogleRecaptcha
         ref="recaptchaRef"
         version="v2"
         :siteKey="recaptchaSiteKey"
@@ -32,7 +32,7 @@
 
 <script setup>
 import { ref } from "vue";
-import GoogleRecaptchaVue3 from "../components/Recaptcha.vue";
+import GoogleRecaptcha from "../components/Recaptcha.vue";
 
 const recaptchaSiteKey = ref("Your reCAPTCHA Site Key");
 const recaptchaRef = ref(null);
