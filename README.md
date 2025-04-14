@@ -32,7 +32,7 @@ npm install google-recaptcha-vue3
 1.  **Import the component:**
 
     ```JavaScript
-    import GoogleRecaptcha from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-vue3';
     ```
 
 2.  **Integrate into your component template:**
@@ -50,7 +50,7 @@ npm install google-recaptcha-vue3
 
     <script setup>
     import { ref } from 'vue';
-    import GoogleRecaptcha from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-vue3';
 
     const recaptchaRef = ref(null);
 
@@ -107,7 +107,7 @@ npm install google-recaptcha-vue3
 1.  **Import the component:**
 
     ```JavaScript
-    import GoogleRecaptcha from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-vue3';
     ```
 
 2.  **Use it in your component template:**
@@ -125,7 +125,7 @@ npm install google-recaptcha-vue3
 
     <script setup>
     import { ref } from 'vue';
-    import GoogleRecaptcha from 'google-recaptcha-v3';
+    import GoogleRecaptcha from 'google-recaptcha-vue3';
 
     const handleToken = (token) => {
       console.log('Token:', token);
