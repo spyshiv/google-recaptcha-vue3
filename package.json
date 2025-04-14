@@ -1,6 +1,6 @@
 {
   "name": "google-recaptcha-vue3",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "description": "Vue 3 component which support both Google reCAPTCHA v2 and v3",
   "main": "google-recaptcha-vue3.umd.js",
