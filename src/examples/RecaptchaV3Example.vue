@@ -1,35 +1,37 @@
 <template>
-  <div class="container">
-    <h3>Vue 3 reCAPTCHA v3 Example</h3>
-    <p>
-      This is an example of using reCAPTCHA v3 in a Vue 3 application. The
-      reCAPTCHA challenge is invisible and will be triggered when the user
-      clicks the button below.
-    </p>
-    <div>
-      <label for="siteKeyInput">Enter reCAPTCHA Site Key:</label>
-      <input
-        id="siteKeyInput"
-        v-model="recaptchaSiteKey"
-        placeholder="Enter your site key"
-      />
-    </div>
-    <Recaptcha
-      ref="recaptchaRef"
-      :siteKey="recaptchaSiteKey"
-      @verify="handleToken"
-      @error="handleError"
+  <h3>Vue 3 reCAPTCHA v3 Example</h3>
+  <p>
+    This is an example of using reCAPTCHA v3 in a Vue 3 application. The
+    reCAPTCHA challenge is invisible and will be triggered when the user clicks
+    the button below.
+  </p>
+  <div>
+    <label for="siteKeyInput">Enter reCAPTCHA Site Key:</label>
+    <input
+      id="siteKeyInput"
+      v-model="recaptchaSiteKey"
+      placeholder="Enter your site key"
     />
-    <button :disabled="!recaptchaSiteKey" @click="submitForm()">
-      Generate reCAPTCHA Token
-    </button>
-    <p>Click the button to invoke the reCAPTCHA v3 challenge.</p>
-    <div v-if="recaptchaToken">
-      <h4>reCAPTCHA Token:</h4>
-      <div class="token">
-        <div>{{ recaptchaToken }}</div>
-      </div>
+  </div>
+  <Recaptcha
+    ref="recaptchaRef"
+    :siteKey="recaptchaSiteKey"
+    @verify="handleToken"
+    @error="handleError"
+  />
+  <button :disabled="!recaptchaSiteKey" @click="submitForm()">
+    Generate reCAPTCHA Token
+  </button>
+  <p>Click the button to invoke the reCAPTCHA v3 challenge.</p>
+  <div v-if="recaptchaToken">
+    <h4>reCAPTCHA Token:</h4>
+    <div class="token">
+      <div>{{ recaptchaToken }}</div>
     </div>
+  </div>
+  <div v-if="recaptchaError">
+    <h4>reCAPTCHA Error:</h4>
+    <div>{{ recaptchaError }}</div>
   </div>
 </template>
 
@@ -49,14 +51,8 @@ function handleToken(token) {
 }
 
 function handleError(err) {
-  if (err.includes("Invalid site key")) {
-    console.error(
-      "Invalid site key provided. Please check your reCAPTCHA configuration."
-    );
-  } else {
-    recaptchaError.value = err;
-    console.error("reCAPTCHA Error:", err);
-  }
+  recaptchaError.value = err;
+  console.error("reCAPTCHA Error:", err);
 }
 
 function submitForm() {
@@ -69,15 +65,6 @@ function submitForm() {
 }
 </script>
 <style scoped>
-.container {
-  font-family: Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
 .token {
   border: 1px solid #ccc;
   border-radius: 4px;

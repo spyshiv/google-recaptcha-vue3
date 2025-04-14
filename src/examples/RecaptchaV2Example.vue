@@ -1,23 +1,32 @@
 <template>
   <div>
     <h3>reCAPTCHA v2 Example</h3>
+    <p>
+      This is an example of using reCAPTCHA v2 in a Vue 3 application. The
+      reCAPTCHA challenge is triggered when the user Enter reCAPTCHA site key.
+    </p>
     <label for="siteKeyInput">Enter reCAPTCHA Site Key:</label>
     <input
       id="siteKeyInput"
       v-model="recaptchaSiteKey"
+      @change="refreshKey++"
       placeholder="Enter your site key"
     />
-
-    <Recaptcha
-      ref="recaptchaRef"
-      version="v2"
-      :siteKey="recaptchaSiteKey"
-      :autoLoad="false"
-      @verify="onVerify"
-      @error="onError"
-    />
-
-    <button :disabled="!recaptchaSiteKey" @click="submitForm">Submit</button>
+    <div :key="refreshKey">
+      <Recaptcha
+        ref="recaptchaRef"
+        version="v2"
+        :siteKey="recaptchaSiteKey"
+        @verify="onVerify"
+        @error="onError"
+      />
+    </div>
+    <div v-if="recaptchaToken">
+      <h4>reCAPTCHA Token:</h4>
+      <div class="token">
+        <div>{{ recaptchaToken }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,20 +34,18 @@
 import { ref } from "vue";
 import Recaptcha from "../components/Recaptcha.vue";
 
-const recaptchaSiteKey = ref("");
+const recaptchaSiteKey = ref("Your reCAPTCHA Site Key");
 const recaptchaRef = ref(null);
+const refreshKey = ref(0);
+const recaptchaToken = ref(null);
 
 function onVerify(token) {
+  recaptchaToken.value = token;
   console.log("Verified Token (v2):", token);
 }
 
 function onError(err) {
   console.error("reCAPTCHA v2 error:", err);
-}
-
-function submitForm() {
-  recaptchaRef.value.execute();
-  console.log("Form submitted with site key (v2):", recaptchaSiteKey.value);
 }
 </script>
 
@@ -53,18 +60,15 @@ input {
   font-size: 14px;
 }
 
-button {
-  background-color: #2e7d32;
-  color: white;
-  padding: 8px 12px;
-  border: 0;
+.token {
+  border: 1px solid #ccc;
   border-radius: 4px;
-  cursor: pointer;
+  padding: 10px;
   margin-top: 10px;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #fff;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 </style>
