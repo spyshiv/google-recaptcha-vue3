@@ -1,8 +1,8 @@
 {
   "name": "google-recaptcha-vue3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
-  "description": "Vue 3 component which support both Google reCAPTCHA v2 and v3",
+  "description": "A lightweight Vue 3 component library supporting Google reCAPTCHA v2 and v3 integration.",
   "main": "google-recaptcha-vue3.umd.js",
   "module": "google-recaptcha-vue3.es.js",
   "files": [
@@ -26,13 +26,13 @@
     "vite": "^5.0.0"
   },
   "keywords": [
-    "vue",
-    "recaptcha",
-    "google",
-    "v2",
-    "v3",
     "vue3",
-    "vite"
+    "google-recaptcha",
+    "recaptcha-v2",
+    "recaptcha-v3",
+    "vue-component",
+    "captcha",
+    "vue-plugin"
   ],
   "author": "Shiv Baran Singh <spyshiv@gmail.com>",
   "license": "MIT",
