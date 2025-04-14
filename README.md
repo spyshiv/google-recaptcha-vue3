@@ -1,6 +1,6 @@
 # 🛡️ Google reCAPTCHA Vue3
 
-With this simple and efficient plugin, you can effortlessly integrate **Google reCAPTCHA Vue3** (invisible) and **v2** (checkbox) into your Vue 3 applications.
+Effortlessly integrate Google reCAPTCHA **v3 (invisible)** and **v2 (checkbox)** into your Vue 3 applications with this lightweight and efficient plugin.
 
 > 🔐 Protect your website from spam and abuse by leveraging Google's robust reCAPTCHA service.
 
@@ -96,6 +96,10 @@ npm install google-recaptcha-vue3
     };
     ```
 
+#### Screenshot
+
+![reCaptcha V3 Demo](https://raw.githubusercontent.com/spyshiv/google-recaptcha-vue3/refs/heads/main/src/assets/v3.png)
+
 ---
 
 ### ✅ reCAPTCHA v2 (Checkbox)
@@ -158,6 +162,12 @@ npm install google-recaptcha-vue3
       recaptchaRef.value.execute(); // Note: For v2, 'execute' will render the checkbox if not already loaded.
     };
     ```
+
+#### Screenshot
+
+![reCaptcha V2 Demo](https://raw.githubusercontent.com/spyshiv/google-recaptcha-vue3/refs/heads/main/src/assets/v2.png)
+
+---
 
 ### ⚙️ Props
 
