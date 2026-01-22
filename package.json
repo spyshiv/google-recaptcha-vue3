@@ -10,8 +10,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./google-recaptcha-vue3.es.js",
-      "require": "./google-recaptcha-vue3.umd.js"
+      "import": "./dist/google-recaptcha-vue3.es.js",
+      "require": "./dist/google-recaptcha-vue3.umd.js"
     }
   },
   "scripts": {
